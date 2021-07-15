@@ -4,7 +4,12 @@
     
 ~~~JavaScript
 
-#問題の駒を配置
+# 問題の駒を配置
+#  3 2 1
+# |M|F| |1
+# | |G| |2
+# |F| |F|3
+
 b.pieces = []
 b.pieces.push(new Piece.Ka(Const.FIRST, Const.Status.OMOTE, [3,1]))
 b.pieces.push(new Piece.Gi(Const.FIRST, Const.Status.OMOTE, [2,2]))
@@ -18,6 +23,11 @@ b.pieces.push(new Piece.Fu(Const.FIRST, Const.Status.OMOTE, [1,3]))
 ~~~JavaScript
 
 #解答の駒を配置
+#  3 2 1
+# | |F|F|1
+# | |G| |2
+# |F| |M|3
+
 answer = new Board()
 answer.pieces.push(new Piece.Ka(Const.FIRST, Const.Status.OMOTE, [1,3]))
 answer.pieces.push(new Piece.Gi(Const.FIRST, Const.Status.OMOTE, [2,2]))

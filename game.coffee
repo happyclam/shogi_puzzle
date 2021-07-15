@@ -208,6 +208,10 @@ answer.pieces.push(new Piece.Fu(Const.FIRST, Const.Status.OMOTE, [3,3]))
 answer.pieces.push(new Piece.Fu(Const.FIRST, Const.Status.OMOTE, [2,1]))
 answer.pieces.push(new Piece.Fu(Const.FIRST, Const.Status.OMOTE, [1,1]))
 
+###
+１一銀、１二歩、１三角、２二銀、１一歩
+###
+
 # # answer1-deepest
 # answer = new Board()
 # answer.pieces.push(new Piece.Ka(Const.FIRST, Const.Status.OMOTE, [3,3]))
@@ -215,10 +219,6 @@ answer.pieces.push(new Piece.Fu(Const.FIRST, Const.Status.OMOTE, [1,1]))
 # answer.pieces.push(new Piece.Fu(Const.FIRST, Const.Status.OMOTE, [3,1]))
 # answer.pieces.push(new Piece.Fu(Const.FIRST, Const.Status.OMOTE, [2,1]))
 # answer.pieces.push(new Piece.Fu(Const.FIRST, Const.Status.OMOTE, [1,1]))
-
-###
-１一銀、１二歩、１三角、２二銀、１一歩
-###
 
 node = new Node(b)
 bfs(b)
