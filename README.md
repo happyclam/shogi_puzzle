@@ -1,6 +1,7 @@
 # shogi_puzzle
 将棋パズル（結将棋）解答プログラム
 
+[「BFSで将棋パズルを解く」](https://happyclam.github.io/software/2018-08-18/puzzle)
     
 ~~~JavaScript
 
