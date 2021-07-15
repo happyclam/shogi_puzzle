@@ -1,0 +1,20 @@
+Status =
+    OMOTE: 0
+    URA: 1
+    MOTIGOMA: 2
+
+FIRST = -1
+SECOND = 1
+COLS = 3
+ROWS = 3
+MAX_VALUE = 50000
+MIN_VALUE = -50000
+
+module.exports =
+    Status: Status
+    FIRST: FIRST
+    SECOND: SECOND
+    COLS: COLS
+    ROWS: ROWS
+    MAX_VALUE: MAX_VALUE
+    MIN_VALUE: MIN_VALUE
