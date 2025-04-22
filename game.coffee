@@ -70,14 +70,18 @@ class Node
     # 子局面を辿りながら多分木データを追加していく
     add: (target, obj) ->
         ret = null
-        for v, i in @child
-            # 親となる局面を見つけたらその子局面としてNodeオブジェクトを追加
-            if Node.make_hash(v.value) == Node.make_hash(target)
-                ret = v.child.push(obj)
-            # 見つからなければさらに子局面を辿る
-            else
-                ret = v.add(target, obj)
-            break if ret?
+        if Node.make_hash(@value) == Node.make_hash(target)
+            @child.push(obj)
+            ret = true
+        else
+            for v, i in @child
+                # 親となる局面を見つけたらその子局面としてNodeオブジェクトを追加
+                if Node.make_hash(v.value) == Node.make_hash(target)
+                    ret = v.child.push(obj)
+                # 見つからなければさらに子局面を辿る
+                else
+                    ret = v.add(target, obj)
+                break if ret?
         return ret
 
     deepest: ->
@@ -121,11 +125,9 @@ bfs = (board) ->
     queue = []
     queue.push(board)
     seq = 0
-    layer = 0
     hitFlg = false
     while queue.length > 0
         bd = queue.shift()
-        layer += 1
         for koma in bd.pieces
             for v in eval("Piece." + koma.kind()).getD(koma.turn, koma.status)
                 buf = [].concat(koma.posi)
@@ -153,10 +155,7 @@ bfs = (board) ->
                         else
                             Node.set_dup(md5hash)
                         seq += 1
-                        if layer == 1
-                            node.child.push(new Node(temp))
-                        else
-                            node.add(bd, new Node(temp))
+                        node.add(bd, new Node(temp))
                         return if hitFlg
                         queue.push(temp)
                         # console.log("seq = #{seq}")
